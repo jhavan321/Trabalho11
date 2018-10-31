@@ -37,7 +37,7 @@ void locar (struct filme f){
 	 	scanf("%s", &f.enderecoCliente);
 		time_t data;
 		time(&data);
- 		f.dataDeLocacao = ctime(&data);
+		strcpy(f.dataDeLocacao, ctime(&data));
 }
 
 void devolver(struct filme f){
