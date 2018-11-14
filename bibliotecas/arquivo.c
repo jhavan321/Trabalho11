@@ -15,17 +15,17 @@ int ler(struct filme f[]) {
 		indice++;
 	}
 	fclose(arquivo);
-	return 1;
+	return indice;
 }
 
-int escrever(struct filme f[]) {
+int escrever(struct filme f[], int tamanho) {
 	FILE *arquivo;
 	int indice = 0;
 	arquivo = fopen("./dados/filmes.dat", "w");
 	if(arquivo == NULL) {
 		return 0;
 	}
-	fwrite(f, sizeof(struct filme), 1, arquivo);
+	fwrite(f, sizeof(struct filme) * tamanho, 1, arquivo);
 	fflush(arquivo);
 	fclose(arquivo);
 	return 1;
