@@ -17,21 +17,42 @@ int main(){
 				escrever(f, tamanho);
 				break;
 			case 2:
-				//editar(f);
+				index = listarTodos(f, tamanho);
+                if(index == -1) {
+                    break;
+                } else {
+                    f[index] = editar(f[index]);
+                    escrever(f, tamanho);
+                    break;
+                }
 				break;
 			case 3:
 				index = listar(f, tamanho);
-				f[index] = locar(f[index]);
-				escrever(f, tamanho);
-				break;
+                if(index == -1) {
+                    break;
+                } else {
+                    f[index] = locar(f[index]);
+                    escrever(f, tamanho);
+                    break;
+                }
 			case 4:
-				//devolver(f);
-				break;
+                index = listarLocados(f, tamanho);
+                if(index == -1) {
+                    break;
+                } else {
+                    f[index] = devolver(f[index]);
+                    escrever(f, tamanho);
+                    break;
+                }
 			case 5:
+                pesquisar(f, tamanho);
 				break;
 			case 6:
+                relatorio(f, tamanho);
 				break;
 			case 7:
+                gerarRelatorioTXT(f, tamanho);
+                gerarRelatorioPDF();
 				break;
 		}
 	}
